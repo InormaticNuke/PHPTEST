@@ -24,18 +24,19 @@
 
     <br><br>
 
-    <form action="assign.php" method="POST2">
+    <form action="assign.php" method="POST">
 
-    <input type="button" value="red">
-    <input type="button" value="green">
-    <input type="button" value="blue">
-    <input type="button" value="yellow">
-    <input type="button" value="pink">
+    <button type="sumbit" name="color" value="red">Red</button>
+    <button type="sumbit" name="color" value="green">Green</button>
+    <button type="sumbit" name="color" value="blue">Blue</button>
+    <button type="sumbit" name="color" value="yellow">Yellow</button>
+    <button type="sumbit" name="color" value="pink">Pink</button>
 
     </form>
 
     <br><br>
-    
+
+ 
 </body>
 </html>
 
@@ -47,6 +48,7 @@ if ($_POST) {
 
     $value1 = $_POST["Value1"];
     $value2 = $_POST["Value2"];
+    $color = $_POST["color"];
 
     if (isset($_POST['add01'])) {
 
@@ -79,6 +81,11 @@ if ($_POST) {
 
     else {
         echo $value2. " Is bigger than ". $value1;
+    }
+
+    if (isset($_POST["color"])) {
+
+        echo "The selected colour is: ".$color;
     }
 
 }
